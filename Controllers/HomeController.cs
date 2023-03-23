@@ -44,9 +44,9 @@ namespace TPLOCAL1.Controllers
             //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
             if (ModelState.IsValid)
             {
-                return View(formulaire) ;
+                return View() ;
             }
-            return View();
+            return View(formulaire);
         }
     }
 }

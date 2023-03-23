@@ -33,3 +33,14 @@ a{
 section{
     margin-left: 170px;
 }
+
+
+table, th, td{
+    border: 1px solid;
+    margin-left: 170px;
+    margin-top : 15px;
+}
+
+.submit_button{
+    margin-left: 170px;
+}

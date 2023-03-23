@@ -21,12 +21,10 @@
         </ul>
     </nav>
     <form asp-controller="Home" asp-action="ValidationFormulaire" method="post">
-    <table>  
-        <tr> 
-            <th colspan="2">
-                Informations personnelles
-            </th>
-        </tr>
+    <table>
+        <caption align="top">
+            Informations personnelles
+        </caption>
             <tr>
                 <td>
                     <label for="Nom">Nom</label>
@@ -91,11 +89,9 @@
        
     </table>
     <table>
-        <tr>
-            <th colspan="2">
-                Informations formation suivie
-            </th>
-        </tr>
+        <caption align="top">
+            Informations formation suivie
+        </caption>
        
         <tr>
             <td>
@@ -121,15 +117,12 @@
         
     </table>
     <table>
-        <tr>
-            <th colspan="2">
-                Avis sur la formation
-            </th>
-        </tr>
-        
+        <caption align="top">
+            Avis sur la formation
+        </caption>
             <tr>
                 <td>
-                    <label for="Cobol">Cobol</label>
+                    <label for="Cobol">Formation Cobol</label>
                 </td>
                 <td>
                      <input type="text" id="Cobol" />
@@ -137,7 +130,7 @@
             </tr>
             <tr>
                 <td>
-                    <label for="Csharp">C#</label>
+                    <label for="Csharp">Formation C#</label>
                 </td>
                 <td>
                      <input type="text" id="Csharp" />
@@ -145,7 +138,7 @@
             </tr>
             
     </table>
-    <input type="submit" name="submit" value="Valider" />
+        <input type="submit" class="submit_button" name="submit" value="Valider" />
     </form>
 </body>
 </html>
