@@ -37,13 +37,16 @@ namespace TPLOCAL1.Controllers
 
         //méthode pour envoyer les données du formulaire vers la page de validation
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        public ActionResult ValidationFormulaire([Bind("Nom, Prenom, Sexe, Adresse, CodePostal, Ville, Mail, DateDebFormation, TypeFormation, Cobol, Csharp")] FormulaireModel formulaire)
         {
             //reste à faire : tester de si les champs du modele sont bien remplis
             //s'ils ne sont pas bien remplis, afficher une erreur et rester sur la page formulaire
             //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
-            return null;
-
+            if (ModelState.IsValid)
+            {
+                return View(formulaire) ;
+            }
+            return View();
         }
     }
 }

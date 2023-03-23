@@ -1,0 +1,154 @@
+﻿@model TPLOCAL1.Models.FormulaireModel
+@{
+    ViewData["Title"] = "Formulaire";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="~/ressources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/ressources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>Formulaire TP HN avis</h1>
+    </header> 
+    <nav> 
+        <ul>
+            <li><a href="/Home/Index/Index">Acceuil</a></li>
+            <li><a href="/Home/Index/Listeavis">Liste avis</a></li>
+        </ul>
+    </nav>
+    <form asp-controller="Home" asp-action="ValidationFormulaire" method="post">
+    <table>  
+        <tr> 
+            <th colspan="2">
+                Informations personnelles
+            </th>
+        </tr>
+            <tr>
+                <td>
+                    <label for="Nom">Nom</label>
+                </td>
+                <td>
+                    <input type="text" id="Nom" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Prenom">Prénom</label>
+                </td>
+                <td>
+                    <input type="text" id="Prenom" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Sexe">Sexe</label>
+                </td>
+                <td>
+                    <select id="Sexe">
+                        <option value="neant">Selectionner un sexe</option>
+                        <option value="femme">Femme</option>
+                        <option value="homme">Homme</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Adresse">Adresse</label>
+                </td>
+                <td>
+                    <input type="text" id="Adresse" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="CodePostal">Code Postal</label>
+                </td>
+                <td>
+                    <input type="text" id="CodePostal" pattern="[0-9]{5}"  />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Ville">Ville</label>
+                </td>
+                <td>
+                    <input type="text" id="Ville" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Mail">Adresse mail</label>
+                </td>
+                <td>
+                <input type="text" id="Mail" pattern="^([\w]+)&#64;([\w]+)\.([\w]+)$" />
+                </td>
+            </tr>
+       
+    </table>
+    <table>
+        <tr>
+            <th colspan="2">
+                Informations formation suivie
+            </th>
+        </tr>
+       
+        <tr>
+            <td>
+                <label for="DateDebFormation">Date de début de formation</label>
+            </td>
+            <td>
+                <input type="date" id="DateDebFormation" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="TypeFormation">Sexe</label>
+            </td>
+            <td>
+                <select id="TypeFormation">
+                    <option value="neant">Selectionner une formation</option>
+                    <option value="cobol">Formation Cobol</option>
+                    <option value="objet">Formation Objet</option>
+                    <option value="double">Formation double compétence</option>
+                </select>
+            </td>
+        </tr>
+        
+    </table>
+    <table>
+        <tr>
+            <th colspan="2">
+                Avis sur la formation
+            </th>
+        </tr>
+        
+            <tr>
+                <td>
+                    <label for="Cobol">Cobol</label>
+                </td>
+                <td>
+                     <input type="text" id="Cobol" />
+                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Csharp">C#</label>
+                </td>
+                <td>
+                     <input type="text" id="Csharp" />
+                 </td>
+            </tr>
+            
+    </table>
+    <input type="submit" name="submit" value="Valider" />
+    </form>
+</body>
+</html>
+@{
+    Layout = null;
+}

@@ -2,9 +2,30 @@
     ViewData["Title"] = "Index";
 }
 
-<div>
-    i'm bleu
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HN - TP LOCAL</title>
+    <link rel="stylesheet" href="~/ressources/Index.css" />
+</head>
+<body>
+    <header>
+        <img src="~/ressources/GroupeHN.png" class="image" alt="GroupeHN"/>
+        <h1>Bienvenue dans le TP HN</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Remplir le formulaire</a></li>
+            <li><a href="/Home/Index/ListeAvis">Liste Avis</a></li>
+        </ul>
+    </nav>
+    <section>
+        <p>
+            <a href="/Home/Index/Formulaire">Remplir le formulaire</a>
+        </p>
+    </section>
+</body>
+</html>
 
 @{
     Layout = null;
