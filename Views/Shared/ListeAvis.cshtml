@@ -28,19 +28,19 @@
             <th>Avis donné</th>
         </tr>
         @foreach (Avis avis in Model.GetAvis("/FichierXML/DataAvis"))
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelavis => avis.Nom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelavis => avis.Prenom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelavis => avis.AvisDonne)
-            </td>
-        </tr>
-    }
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => avis.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => avis.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => avis.AvisDonne)
+                </td>
+            </tr>
+        }
     </table>
 </body>
 </html>

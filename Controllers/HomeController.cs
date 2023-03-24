@@ -24,6 +24,8 @@ namespace TPLOCAL1.Controllers
                 {
                     case "ListeAvis":
                         //reste à faire : coder la lecture du fichier xml fourni
+                        ListeAvis listeAvis = new ListeAvis();
+                        listeAvis.GetAvis("/FichierXML/DataAvis");
                         return View(id);
                     case "Formulaire":
                         //reste à faire : appeler la vue Formulaire avec le modèle de données vide
@@ -47,7 +49,7 @@ namespace TPLOCAL1.Controllers
             {
                 return View();
             }
-            return View("Formulaire");
+            return View("formulaire");
         }
     }
 }
