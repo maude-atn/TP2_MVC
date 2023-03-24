@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\FichierXML\DataAvis.xml" />
     <None Include="wwwroot\ressources\GroupeHN.png" />
     <None Include="wwwroot\ressources\Mise en place TP Formation double compétence - Spécifications_V1.6.docx" />
   </ItemGroup>
