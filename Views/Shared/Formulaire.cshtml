@@ -32,8 +32,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Nom)
+                    @Html.ValidationMessageFor(m => m.Nom, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.Nom, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
@@ -52,8 +52,9 @@
                     @Html.DropDownListFor(m => m.Sexe, new List<SelectListItem>
                     { new SelectListItem{Text="Homme", Value="Homme"},
                       new SelectListItem{Text="Femme", Value="Femme"}, new SelectListItem{Text="Autre", Value="Autre"}}, "Selectionner un sexe")
+                    @Html.ValidationMessageFor(m => m.Sexe, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.Sexe, "", new { @class = "error" })
+                
             </tr>
             <tr>
                 <td>
@@ -61,8 +62,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Adresse)
+                    @Html.ValidationMessageFor(m => m.Adresse, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.Adresse, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
@@ -70,8 +71,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.CodePostal)
+                    @Html.ValidationMessageFor(m => m.CodePostal, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.CodePostal, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
@@ -79,8 +80,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Ville)
+                    @Html.ValidationMessageFor(m => m.Ville, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.Ville, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
@@ -88,8 +89,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Mail)
+                    @Html.ValidationMessageFor(m => m.Mail, "", new { @class = "error" })
                 </td>
-                @Html.ValidationMessageFor(m => m.Mail, "", new { @class = "error" })
             </tr>
        
     </table>
@@ -104,8 +105,8 @@
             </td>
             <td>
                     @Html.TextBoxFor(m => m.DateDebFormation)
+                    @Html.ValidationMessageFor(m => m.DateDebFormation, "", new { @class = "error" })
             </td>
-                @Html.ValidationMessageFor(m => m.DateDebFormation, "", new { @class = "error" })
         </tr>
         <tr>
             <td>
@@ -116,8 +117,8 @@
                 { new SelectListItem{Text="Formation Cobol", Value="Formation Cobol"},
                   new SelectListItem{Text="Formation Objet", Value="Formation Objet"},
                   new SelectListItem{Text="Formation double compétence", Value="Formation double compétence"}}, "Selectionner une formation")
-            </td>
                 @Html.ValidationMessageFor(m => m.TypeFormation, "", new { @class = "error" })
+            </td>
         </tr>
         
     </table>
@@ -131,8 +132,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Cobol)
+                    @Html.ValidationMessageFor(m => m.Cobol, "", new { @class = "error" })
                  </td>
-                @Html.ValidationMessageFor(m => m.Cobol, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
@@ -140,8 +141,8 @@
                 </td>
                 <td>
                     @Html.TextBoxFor(m => m.Csharp)
+                    @Html.ValidationMessageFor(m => m.Csharp, "", new { @class = "error" })
                  </td>
-                @Html.ValidationMessageFor(m => m.Csharp, "", new { @class = "error" })
             </tr>
             
     </table>
