@@ -20,71 +20,76 @@
             <li><a href="/Home/Index/ListeAvis">Liste avis</a></li>
         </ul>
     </nav>
-    <form asp-controller="Home" asp-action="ValidationFormulaire" method="post">
+    @using (Html.BeginForm("ValidationFormulaire", "Home", FormMethod.Post))
+    {
     <table>
         <caption align="top">
             Informations personnelles
         </caption>
             <tr>
                 <td>
-                    <label for="Nom">Nom</label>
+                    Nom
                 </td>
                 <td>
-                    <input type="text" id="Nom" />
+                    @Html.TextBoxFor(m => m.Nom)
+                </td>
+                @Html.ValidationMessageFor(m => m.Nom, "", new { @class = "error" })
+            </tr>
+            <tr>
+                <td>
+                    Prénom
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Prenom)
+                    @Html.ValidationMessageFor(m => m.Prenom, "", new { @class = "error" })
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label for="Prenom">Prénom</label>
+                    Sexe
                 </td>
                 <td>
-                    <input type="text" id="Prenom" />
+                    @Html.DropDownListFor(m => m.Sexe, new List<SelectListItem>
+                    { new SelectListItem{Text="Homme", Value="Homme"},
+                      new SelectListItem{Text="Femme", Value="Femme"}, new SelectListItem{Text="Autre", Value="Autre"}}, "Selectionner un sexe")
                 </td>
+                @Html.ValidationMessageFor(m => m.Sexe, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
-                    <label for="Sexe">Sexe</label>
+                    Adresse
                 </td>
                 <td>
-                    <select id="Sexe">
-                        <option value="neant">Selectionner un sexe</option>
-                        <option value="femme">Femme</option>
-                        <option value="homme">Homme</option>
-                        <option value="autre">Autre</option>
-                    </select>
+                    @Html.TextBoxFor(m => m.Adresse)
                 </td>
+                @Html.ValidationMessageFor(m => m.Adresse, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
-                    <label for="Adresse">Adresse</label>
+                    Code Postal
                 </td>
                 <td>
-                    <input type="text" id="Adresse" />
+                    @Html.TextBoxFor(m => m.CodePostal)
                 </td>
+                @Html.ValidationMessageFor(m => m.CodePostal, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
-                    <label for="CodePostal">Code Postal</label>
+                    Ville
                 </td>
                 <td>
-                    <input type="text" id="CodePostal" pattern="[0-9]{5}"  />
+                    @Html.TextBoxFor(m => m.Ville)
                 </td>
+                @Html.ValidationMessageFor(m => m.Ville, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
-                    <label for="Ville">Ville</label>
+                    Adresse mail
                 </td>
                 <td>
-                    <input type="text" id="Ville" />
+                    @Html.TextBoxFor(m => m.Mail)
                 </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="Mail">Adresse mail</label>
-                </td>
-                <td>
-                <input type="text" id="Mail" pattern="^([\w]+)&#64;([\w]+)\.([\w]+)$" />
-                </td>
+                @Html.ValidationMessageFor(m => m.Mail, "", new { @class = "error" })
             </tr>
        
     </table>
@@ -95,24 +100,24 @@
        
         <tr>
             <td>
-                <label for="DateDebFormation">Date de début de formation</label>
+                Date de début de formation
             </td>
             <td>
-                <input type="date" id="DateDebFormation" />
+                    @Html.TextBoxFor(m => m.DateDebFormation)
             </td>
+                @Html.ValidationMessageFor(m => m.DateDebFormation, "", new { @class = "error" })
         </tr>
         <tr>
             <td>
-                <label for="TypeFormation">Sexe</label>
+                Sexe
             </td>
             <td>
-                <select id="TypeFormation">
-                    <option value="neant">Selectionner une formation</option>
-                    <option value="cobol">Formation Cobol</option>
-                    <option value="objet">Formation Objet</option>
-                    <option value="double">Formation double compétence</option>
-                </select>
+                @Html.DropDownListFor(m => m.TypeFormation, new List<SelectListItem>
+                { new SelectListItem{Text="Formation Cobol", Value="Formation Cobol"},
+                  new SelectListItem{Text="Formation Objet", Value="Formation Objet"},
+                  new SelectListItem{Text="Formation double compétence", Value="Formation double compétence"}}, "Selectionner une formation")
             </td>
+                @Html.ValidationMessageFor(m => m.TypeFormation, "", new { @class = "error" })
         </tr>
         
     </table>
@@ -122,24 +127,26 @@
         </caption>
             <tr>
                 <td>
-                    <label for="Cobol">Formation Cobol</label>
+                    Formation Cobol
                 </td>
                 <td>
-                     <input type="text" id="Cobol" />
+                    @Html.TextBoxFor(m => m.Cobol)
                  </td>
+                @Html.ValidationMessageFor(m => m.Cobol, "", new { @class = "error" })
             </tr>
             <tr>
                 <td>
-                    <label for="Csharp">Formation C#</label>
+                    Formation C#
                 </td>
                 <td>
-                     <input type="text" id="Csharp" />
+                    @Html.TextBoxFor(m => m.Csharp)
                  </td>
+                @Html.ValidationMessageFor(m => m.Csharp, "", new { @class = "error" })
             </tr>
             
     </table>
         <input type="submit" class="submit_button" name="submit" value="Valider" />
-    </form>
+    }
 </body>
 </html>
 @{

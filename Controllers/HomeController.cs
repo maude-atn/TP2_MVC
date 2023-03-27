@@ -25,7 +25,6 @@ namespace TPLOCAL1.Controllers
                     case "ListeAvis":
                         //reste à faire : coder la lecture du fichier xml fourni
                         ListeAvis liste = new ListeAvis();
-                        
                         ViewData["Liste"] = liste;
                         return View(id);
                     case "Formulaire":
@@ -41,16 +40,30 @@ namespace TPLOCAL1.Controllers
 
         //méthode pour envoyer les données du formulaire vers la page de validation
         [HttpPost]
-        public ActionResult ValidationFormulaire([Bind("Nom, Prenom, Sexe, Adresse, CodePostal, Ville, Mail, DateDebFormation, TypeFormation, Cobol, Csharp")] FormulaireModel formulaire)
+        public ActionResult ValidationFormulaire(FormulaireModel formulaire)
         {
             //reste à faire : tester de si les champs du modele sont bien remplis
             //s'ils ne sont pas bien remplis, afficher une erreur et rester sur la page formulaire
             //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
+            string nom = formulaire.Nom;
+            string prenom = formulaire.Prenom;
+            string sexe = formulaire.Sexe;
+            string adresse = formulaire.Adresse;
+            int codepostal = formulaire.CodePostal;
+            string ville = formulaire.Ville;
+            string mail = formulaire.Mail;
+            string datedebformation = formulaire.DateDebFormation;
+            string typeformation = formulaire.TypeFormation;
+            string cobol = formulaire.Cobol;
+            string csharp = formulaire.Csharp;
+
+            ViewData["Formulaire"] = formulaire;
+
             if (ModelState.IsValid)
             {
-                return View();
+                return View(formulaire);
             }
-            return View("formulaire");
+            return View("Formulaire");
         }
     }
 }

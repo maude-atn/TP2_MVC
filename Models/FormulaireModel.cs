@@ -14,7 +14,7 @@ namespace TPLOCAL1.Models
         [Required(ErrorMessage = "Donnée obligatoire.")] [RegularExpression(@"[0-9]{5}", ErrorMessage = "Le format n'est pas bon")] public int CodePostal { get; set; }
         [Required(ErrorMessage = "Donnée obligatoire.")] public string Ville { get; set; }
         [Required(ErrorMessage = "Donnée obligatoire.")] [RegularExpression(@"^([\w]+)@([\w]+)\.([\w]+)$", ErrorMessage = "Le format n'est pas bon")] public string Mail { get; set; }
-        [Required(ErrorMessage = "Donnée obligatoire.")] public DateOnly DateDebFormation { get; set; }
+        [Required(ErrorMessage = "Donnée obligatoire.")] public string DateDebFormation { get; set; }
         [Required(ErrorMessage = "Donnée obligatoire.")] public string TypeFormation { get; set; }
         [Required(ErrorMessage = "Donnéee obligatoire.")] public string Cobol { get; set; }
         [Required(ErrorMessage = "Donnéee obligatoire.")] public string Csharp { get; set; }

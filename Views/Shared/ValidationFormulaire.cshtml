@@ -20,37 +20,40 @@
         </ul>
     </nav>
     <p>Votre formulaire a bien été pris en compte.</p>
+    @{
+        var formulaire = ViewData["Formulaire"] as FormulaireModel;
+    }
     <table>
         <caption align="top">
             Informations personnelles
         </caption>
         <tr>
             <td>Nom</td>
-            <td>@Model.Nom</td>
+            <td>@formulaire.Nom</td>
         </tr>
         <tr>
             <td>Prénom</td>
-            <td>@Model.Prenom</td>
+            <td>@formulaire.Prenom</td>
         </tr>
         <tr>
             <td>Sexe</td>
-            <td>@Model.Sexe</td>
+            <td>@formulaire.Sexe</td>
         </tr>
         <tr>
             <td>Adresse</td>
-            <td>@Model.Adresse</td>
+            <td>@formulaire.Adresse</td>
         </tr>
         <tr>
             <td>Code Postal</td>
-            <td>@Model.CodePostal</td>
+            <td>@formulaire.CodePostal</td>
         </tr>
         <tr>
             <td>Ville</td>
-            <td>@Model.Ville</td>
+            <td>@formulaire.Ville</td>
         </tr>
         <tr>
             <td>Adresse mail</td>
-            <td>@Model.Mail</td>
+            <td>@formulaire.Mail</td>
         </tr>
     </table>
     <table>
@@ -59,11 +62,11 @@
         </caption>
         <tr>
             <td>Date début formation</td>
-            <td>@Model.DateDebFormation</td>
+            <td>@formulaire.DateDebFormation</td>
         </tr>
         <tr>
             <td>Formation suivie</td>
-            <td>@Model.TypeFormation</td>
+            <td>@formulaire.TypeFormation</td>
         </tr>
     </table>
     <table>
@@ -72,11 +75,11 @@
         </caption>
         <tr>
             <td>Formation Cobol</td>
-            <td>@Model.Cobol</td>
+            <td>@formulaire.Cobol</td>
         </tr>
         <tr>
             <td>Formation C#</td>
-            <td>@Model.Csharp</td>
+            <td>@formulaire.Csharp</td>
         </tr>
     </table>
 </body>
