@@ -27,7 +27,10 @@
             <th>Prénom</th>
             <th>Avis donné</th>
         </tr>
-        @foreach (Avis avis in Model.GetAvis("/FichierXML/DataAvis"))
+        @{
+            var liste = ViewData["Liste"] as ListeAvis;
+        }
+        @foreach (Avis avis in liste.GetAvis("C:/Users/gigi9/source/repos/TP2-MAN/FichierXML/DataAvis.xml"))
         {
             <tr>
                 <td>
@@ -36,9 +39,17 @@
                 <td>
                     @Html.DisplayFor(modelItem => avis.Prenom)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => avis.AvisDonne)
+                @if (avis.AvisDonne == "O"){
+                <td style="background-color:green">
+                    Oui
                 </td>
+                }
+                @if (avis.AvisDonne == "N")
+                {
+                    <td style="background-color:red">
+                        Non
+                    </td>
+                }
             </tr>
         }
     </table>

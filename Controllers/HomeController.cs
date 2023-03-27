@@ -24,7 +24,10 @@ namespace TPLOCAL1.Controllers
                 {
                     case "ListeAvis":
                         //reste à faire : coder la lecture du fichier xml fourni
-                        return View();
+                        ListeAvis liste = new ListeAvis();
+                        
+                        ViewData["Liste"] = liste;
+                        return View(id);
                     case "Formulaire":
                         //reste à faire : appeler la vue Formulaire avec le modèle de données vide
                         return View(id);
